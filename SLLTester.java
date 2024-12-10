@@ -7,7 +7,6 @@ import java.util.LinkedList;
 
 class SLLTester {
   public static void main(String[] args) {
-    //Part 1 - practice with Stacks
     Scanner input = new Scanner(System.in);
     Stack<String> myStk = new Stack<String>();
 
@@ -16,11 +15,26 @@ class SLLTester {
         String num = input.nextLine();
         myStk.push(num);
     }//end for loop
-    Stack<String> tempStk = myStk;
-    while(!myStk.isEmpty()){
-      if(myStk.peek().equals())
-    }
 
+    Stack<String> tempStk = new Stack<String>();
+    //Part 1 - practice with Stacks - make into a method
+    while(!myStk.isEmpty()){
+      String first = myStk.pop();
+      tempStk.push(first);
+      tempStk.push(first);
+      }//end while
+    while(!tempStk.isEmpty()){
+      String first = tempStk.pop();
+      tempStk.pop();
+      myStk.push(first);
+      myStk.push(first);
+    }//end while
+    
+    System.out.print("Bottom of the Stack " + myStk + " Top of the Stack ");
+    while(!myStk.isEmpty()){ 
+      if(myStk.equals())
+    }
 //Part 2 - practice with queues
-  } // end main
+
+  } // end main 
 } // end class
