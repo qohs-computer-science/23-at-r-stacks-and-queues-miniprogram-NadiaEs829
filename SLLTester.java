@@ -45,15 +45,17 @@ System.out.println("Enter 10 whole numbers");
       myQ.add(num);
     }//end for loop
     
-    while(!myQ.isEmpty()){
-      int first = myQ.remove();
+    while(!myQ.isEmpty()){ 
+      int first = myQ.peek();
+      //int remove = myQ.remove();
       if(first % 2 == 0){
+        int sec = myQ.remove();
         even.push(first);
       }//end if
-      
+   
     }//end while
-    System.out.println(even);
-    System.out.println(myQ);
+    System.out.println(even); //works correctly
+    System.out.println(myQ); //prints nothing
 
   } // end main 
 } // end class
