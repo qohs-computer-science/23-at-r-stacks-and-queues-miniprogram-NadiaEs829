@@ -8,33 +8,52 @@ import java.util.LinkedList;
 class SLLTester {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    Stack<String> myStk = new Stack<String>();
 
+    Stack<Integer> myStk = new Stack<Integer>();
+    System.out.println("Enter 5 whole numbers");
     for(int i = 0; i < 5; i++){
-      System.out.println("Enter a whole number");
-        String num = input.nextLine();
+        int num = input.nextInt();
         myStk.push(num);
     }//end for loop
 
-    Stack<String> tempStk = new Stack<String>();
+    Stack<Integer> tempStk = new Stack<Integer>();
     //Part 1 - practice with Stacks - make into a method
     while(!myStk.isEmpty()){
-      String first = myStk.pop();
+      int first = myStk.pop();
       tempStk.push(first);
       tempStk.push(first);
       }//end while
     while(!tempStk.isEmpty()){
-      String first = tempStk.pop();
+      int first = tempStk.pop();
       tempStk.pop();
       myStk.push(first);
       myStk.push(first);
     }//end while
     
-    System.out.print("Bottom of the Stack " + myStk + " Top of the Stack ");
-    while(!myStk.isEmpty()){ 
-      if(myStk.equals())
-    }
+    System.out.println("Bottom of the Stack " + myStk + " Top of the Stack ");
+   // while(!myStk.isEmpty()){ 
+   //   if(myStk.equals())
+  //  }
+
 //Part 2 - practice with queues
+Queue <Integer> myQ = new LinkedList <Integer>();
+Stack <Integer> even = new Stack <Integer>();
+
+System.out.println("Enter 10 whole numbers");
+    for(int x = 0; x < 10; x++){
+      int num = input.nextInt();
+      myQ.add(num);
+    }//end for loop
+    
+    while(!myQ.isEmpty()){
+      int first = myQ.remove();
+      if(first % 2 == 0){
+        even.push(first);
+      }//end if
+      
+    }//end while
+    System.out.println(even);
+    System.out.println(myQ);
 
   } // end main 
 } // end class
