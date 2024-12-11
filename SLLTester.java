@@ -37,7 +37,7 @@ class SLLTester {
 
 //Part 2 - practice with queues
 Queue <Integer> myQ = new LinkedList <Integer>();
-Stack <Integer> even = new Stack <Integer>();
+Queue <Integer> even = new LinkedList <Integer>(); //try it with even = myQ then % it to see if even or odd then add to even list
 
 System.out.println("Enter 10 whole numbers");
     for(int x = 0; x < 10; x++){
@@ -45,14 +45,15 @@ System.out.println("Enter 10 whole numbers");
       myQ.add(num);
     }//end for loop
     
-    while(!myQ.isEmpty()){ 
+    while(!myQ.isEmpty()){
       int first = myQ.peek();
-      //int remove = myQ.remove();
+      int remove = myQ.remove();
       if(first % 2 == 0){
-        int sec = myQ.remove();
-        even.push(first);
+        //myQ.remove();
+        even.add(first);
       }//end if
-   
+
+
     }//end while
     System.out.println(even); //works correctly
     System.out.println(myQ); //prints nothing
