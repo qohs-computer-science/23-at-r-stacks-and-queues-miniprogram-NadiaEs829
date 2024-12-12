@@ -31,32 +31,35 @@ class SLLTester {
     }//end while
     
     System.out.println("Bottom of the Stack " + myStk + " Top of the Stack ");
-   // while(!myStk.isEmpty()){ 
-   //   if(myStk.equals())
-  //  }
+    
+  //attemp to remove numbers that are the same
+   while(!myStk.isEmpty()){ 
+    int first = myStk.peek();
+    int sec = myStk.pop();
+    if(first == sec)
+      myStk.pop();
+   }//end while
+   System.out.println("" + myStk);
 
 //Part 2 - practice with queues
-Queue <Integer> myQ = new LinkedList <Integer>();
-Queue <Integer> even = new LinkedList <Integer>(); //try it with even = myQ then % it to see if even or odd then add to even list
+Queue <Integer> even = new LinkedList <Integer>();
+Queue <Integer> odd = new LinkedList <Integer>();
 
 System.out.println("Enter 10 whole numbers");
-    for(int x = 0; x < 10; x++){
-      int num = input.nextInt();
-      myQ.add(num);
-    }//end for loop
+  for(int x = 0; x < 10; x++){
+    int num = input.nextInt();
+    if(num % 2 == 0)
+      even.add(num);
+    else
+      odd.add(num);
+  }//end for loop
     
-    while(!myQ.isEmpty()){
-      int first = myQ.peek();
-      int remove = myQ.remove();
-      if(first % 2 == 0){
-        //myQ.remove();
-        even.add(first);
-      }//end if
-
-
+   while(!odd.isEmpty()){
+    int remove = odd.remove();
+      even.add(remove);
     }//end while
-    System.out.println(even); //works correctly
-    System.out.println(myQ); //prints nothing
+
+    System.out.println("Printing Queue in order from even to odd " + even); //works correctly
 
   } // end main 
 } // end class
